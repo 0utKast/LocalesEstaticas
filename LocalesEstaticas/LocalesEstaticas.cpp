@@ -1,5 +1,42 @@
 #include <iostream>
 
+int obtenerInteger()
+{
+    static bool s_esPrimeraLlamada{ true };
+
+    if (s_esPrimeraLlamada)
+    {
+        std::cout << "Escribe un entero: ";
+        s_esPrimeraLlamada = false;
+    }
+    else
+    {
+        std::cout << "Escribe otro entero: ";
+    }
+
+    int i{};
+    std::cin >> i;
+    return i;
+}
+
+int main()
+{
+    int a{ obtenerInteger() };
+    int b{ obtenerInteger() };
+
+    std::cout << a << " + " << b << " = " << (a + b) << '\n';
+
+    return 0;
+}
+
+
+
+
+
+
+
+/*#include <iostream>
+
 void incrementaEImprime()
 {
     static int s_valor{ 1 }; // duración estática por palabra clave.  Este inicializador se ejecuta sólo una vez.
@@ -17,7 +54,10 @@ int generateID()
 
 int main() 
 {
-    
+
+    incrementaEImprime();
+    incrementaEImprime();
+    incrementaEImprime();
     generateID();
     generateID();
     generateID();
@@ -25,7 +65,7 @@ int main()
 
 
     return 0;
-}
+}*/
 
 
 
