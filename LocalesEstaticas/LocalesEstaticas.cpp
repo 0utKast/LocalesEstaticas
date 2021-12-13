@@ -7,11 +7,22 @@ void incrementaEImprime()
     std::cout << s_valor << '\n';
 } // s_valor no se destruye aquí, pero se convierte en inaccesible porque está fuera de alcance.
 
-int main()
+int generateID()
 {
-    incrementaEImprime();
-    incrementaEImprime();
-    incrementaEImprime();
+    static int s_itemID{ 0 };
+     // hace copia de s_itemID, incrementa el real s_itemID, luego devuelve el valor de la copia
+    std::cout << s_itemID << '\n';
+    return s_itemID++;
+}
+
+int main() 
+{
+    
+    generateID();
+    generateID();
+    generateID();
+    generateID();
+
 
     return 0;
 }
